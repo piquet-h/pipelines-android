@@ -45,7 +45,7 @@ steps:
     script: |
       echo "no" | $ANDROID_HOME/tools/bin/avdmanager create avd -n xamarin_android_emulator -k 'system-images;android-27;google_apis;x86' --force
 
-      $ANDROID_HOME/emulator/emulator -list-
+      $ANDROID_HOME/emulator/emulator -list-avds
 
 - task: Bash@3
   inputs:
