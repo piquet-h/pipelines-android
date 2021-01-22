@@ -35,11 +35,13 @@ steps:
 
 - task: Bash@3
   inputs:
+   targetType:inline
     script: |
       echo "y" | $ANDROID_HOME/tools/bin/sdkmanager --install 'system-images;android-27;google_apis;x86'
 
 - task: Bash@3
   inputs:
+    targetType: inline
     script: |
       echo "no" | $ANDROID_HOME/tools/bin/avdmanager create avd -n xamarin_android_emulator -k 'system-images;android-27;google_apis;x86' --force
 
@@ -47,6 +49,7 @@ steps:
 
 - task: Bash@3
   inputs:
+    targetType: inline
     script: |
       # Start emulator in background
       nohup $ANDROID_HOME/emulator/emulator -avd xamarin_android_emulator -no-snapshot > /dev/null 2>&1 &
