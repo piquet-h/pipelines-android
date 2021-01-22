@@ -37,7 +37,7 @@ steps:
   inputs:
     targetType: inline
     script: |
-      echo "y" | $ANDROID_HOME/tools/bin/sdkmanager --install 'system-images;android-27;google_apis;x86'
+      echo "y" | $ANDROID_HOME/tools/bin/sdkmanager --install 'system-images;android-30;google_apis;x86'
 
 - task: Bash@3
   inputs:
